@@ -15,7 +15,6 @@ import kotlinx.coroutines.flow.Flow
 // data write to DB mast use kotlin coroutines(suspend fun)
 interface ScanDataRepository{
     fun getAll(): Flow<List<ScanData>>
-    fun getBarcode(): Flow<List<String>>
     suspend fun insert(scanData: ScanData)
     suspend fun delete(scanData: ScanData)
     suspend fun update(scanData: ScanData)

@@ -31,7 +31,6 @@ import kotlinx.coroutines.flow.Flow
 
 class OfflineScanDataRepository(private val scanDataDao: ScanDataDao) : ScanDataRepository {
     override fun getAll(): Flow<List<ScanData>> = scanDataDao.getAll()
-    override fun getBarcode(): Flow<List<String>> = scanDataDao.getBarcode()
     override suspend fun insert(scanData: ScanData) = scanDataDao.insert(scanData)
     override suspend fun delete(scanData: ScanData) = scanDataDao.delete(scanData)
     override suspend fun update(scanData: ScanData) = scanDataDao.update(scanData)

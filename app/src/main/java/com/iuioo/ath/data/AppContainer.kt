@@ -13,7 +13,7 @@ import android.app.Application
  * Dependency Injection container at the application level.
  */
 interface AppContainer {
-    val scanDataRepository: ScanDataRepository
+    val offlineScanDataRepository: OfflineScanDataRepository
 }
 
 /**
@@ -23,7 +23,7 @@ class AppDataContainer(private val context: Context) : AppContainer {
     /**
      * Implementation for [Repository]
      */
-    override val scanDataRepository: ScanDataRepository by lazy {
+    override val offlineScanDataRepository: OfflineScanDataRepository by lazy {
         OfflineScanDataRepository(ScanDataDatabase.getDatabase(context).scanDataDao())
     }
 }
